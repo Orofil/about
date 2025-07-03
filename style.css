@@ -1,0 +1,11 @@
+@font-face { font-family: Nunito; src: url('./fonts/Nunito-VariableFont_wght.ttf') format("truetype"); } 
+
+body {
+	background-color: rgba(26, 20, 34, 1);
+	color: rgba(222, 222, 245, 1);
+    font-family: Nunito;
+}
+
+.main {
+    justify-items: center;
+}
