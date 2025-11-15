@@ -1,0 +1,39 @@
+---
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	@font-face {
+		font-family: Nunito;
+		src: url('/about/fonts/Nunito-VariableFont_wght.ttf') format("truetype");
+	}
+
+	:root {
+		--background-color: rgba(26, 20, 34, 1);
+		--color-link: rgba(142, 97, 172, 1);
+	}
+
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100vh;
+
+		background-color: var(--background-color);
+		color: rgba(222, 222, 245, 1);
+		font-family: Nunito;
+	}
+</style>
