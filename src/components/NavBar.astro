@@ -1,0 +1,72 @@
+---
+import MouseNavBar from "./MouseNavBar.jsx";
+---
+
+<MouseNavBar client:load>
+    <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Music</a></li>
+    </ul>
+</MouseNavBar>
+
+<style>
+	:global(#navbar) {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 1em 3em;
+
+        background: var(--background-color-2);
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.1s linear;
+
+        --x: -9999px;
+        --y: -9999px;
+    }
+
+    :global(#navbar:hover) {
+        border-bottom: 2px solid rgba(255, 150, 250, 0.05);
+    }
+
+    :global(#navbar::after) {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+
+        background: var(--link-color);
+        pointer-events: none;
+
+        -webkit-mask-image: radial-gradient(
+            circle 220px at var(--x) var(--y),
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,1) 15%,
+            rgba(0,0,0,0) 90%
+        );
+        mask-image: radial-gradient(
+            circle 220px at var(--x) var(--y),
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,1) 15%,
+            rgba(0,0,0,0) 90%
+        );
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+</style>
