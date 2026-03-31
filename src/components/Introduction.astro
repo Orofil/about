@@ -1,17 +1,33 @@
 <div>
 	<h1>Orofil</h1>
-	<p>Under construction...</p>
+	<p>Hello! Welcome to my page about things such as...</p>
+	<ul id="introduction-things"> <!-- TODO style in different positions horizontally and vertically, and in varying colors -->
+		<li>photography, nature,<br>and the art I see in it</li>
+		<li>music</li>
+		<li>other arts</li>
+		<li>computer stuff</li>
+		<li>video games</li>
+	</ul>
 
-	<div id="links">
-		<ul style="list-style-type: none;">
-			<li><a href="https://github.com/Orofil">GitHub</a></li>
-			<li><a href="https://bandcamp.com/orofil">Bandcamp</a></li>
-			<li><a href="https://www.last.fm/user/Orofil">last.fm</a></li>
-		</ul>
+	<p>This website is still a <strong>work in progress</strong>!</p>
+
+	<div id="links-container">
+		<p>Find me in...</p>
+		<div id="links-list">
+			<ul style="list-style-type: none;">
+				<li><a href="https://github.com/Orofil">GitHub</a></li>
+				<li><a href="https://bandcamp.com/orofil">Bandcamp</a></li>
+				<li><a href="https://www.last.fm/user/Orofil">last.fm</a></li>
+			</ul>
+		</div>
 	</div>
 </div>
 
 <style>
+	h1 {
+		letter-spacing: 0.04em;
+	}
+	
 	a {
 		text-underline-offset: 5px;
 	}
@@ -28,7 +44,54 @@
 		margin-left: -30px;
 	}
 
-	#links {
+	#introduction-things {
+		list-style-type: none;
+	}
+
+	#introduction-things > li {
+		position: relative;
+	}
+
+	#introduction-things > li::before {
+		content: "- ";
+		opacity: 0.6;
+	}
+
+	#introduction-things > li:nth-child(1) {
+		color: #9bd680;
+		left: 1em;
+	}
+	#introduction-things > li:nth-child(2) {
+		color: #80a8d6;
+		left: 3.5em;
+	}
+	#introduction-things > li:nth-child(3) {
+		color: #a880d6;
+		left: 2.6em;
+	}
+	#introduction-things > li:nth-child(4) {
+		color: #d6b480;
+		left: 3.8em;
+	}
+	#introduction-things > li:nth-child(5) {
+		color: #d68095;
+		left: 1.2em;
+	}
+
+	#links-container {
+		position: absolute;
+		top: 5em;
+		right: 5em;
+		width: 16em;
+	}
+
+	#links-container > p {
+		margin-bottom: -0.5em;
+		font-style: italic;
+		color: var(--link-color-lighter);
+	}
+
+	#links-list {
 		border-left: 0.2em solid var(--link-color);
 	}
 </style>
