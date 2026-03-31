@@ -1,12 +1,22 @@
-let x = 0;
-let y = 0;
+let x = -9999;
+let y = -9999;
 const listeners = new Set();
 
-// Single global mousemove listener
-if (typeof window !== "undefined") {
+// Check if mobile device
+const isMobile = typeof navigator !== "undefined" && navigator.maxTouchPoints > 1;
+
+// Global mousemove listener
+if (typeof window !== "undefined" && !isMobile) {
   window.addEventListener("mousemove", (e) => {
     x = e.clientX;
     y = e.clientY;
+    listeners.forEach((fn) => fn({ x, y }));
+  });
+
+  // Reset cursor position when mouse leaves the page
+  window.addEventListener("mouseout", () => {
+    x = -9999;
+    y = -9999;
     listeners.forEach((fn) => fn({ x, y }));
   });
 }
@@ -14,7 +24,6 @@ if (typeof window !== "undefined") {
 // Subscribe function for components
 export function subscribe(fn) {
   listeners.add(fn);
-  // Call immediately with current cursor position
   fn({ x, y });
   return () => listeners.delete(fn);
 }
