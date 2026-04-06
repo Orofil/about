@@ -9,10 +9,21 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/about/icon/favicon-16x16.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/about/icon/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="48x48" href="/about/icon/favicon-48x48.png" />
 		<meta name="generator" content={Astro.generator} />
+
+		<link rel="icon" type="image/png" sizes="16x16" href="/about/icon/favicon-dark-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/about/icon/favicon-dark-32x32.png" />
+		<link rel="icon" type="image/png" sizes="48x48" href="/about/icon/favicon-dark-48x48.png" />
+
+		<!-- Dynamic favicons for different themes (if it works?) -->
+		<link rel="icon" type="image/png" sizes="16x16" href="/about/icon/favicon-light-16x16.png" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/about/icon/favicon-light-32x32.png" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/png" sizes="48x48" href="/about/icon/favicon-light-48x48.png" media="(prefers-color-scheme: dark)" />
+
+		<link rel="icon" type="image/png" sizes="16x16" href="/about/icon/favicon-dark-16x16.png" media="(prefers-color-scheme: light)" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/about/icon/favicon-dark-32x32.png" media="(prefers-color-scheme: light)" />
+		<link rel="icon" type="image/png" sizes="48x48" href="/about/icon/favicon-dark-48x48.png" media="(prefers-color-scheme: light)" />
+
 		<title>{title}</title>
 	</head>
 	<body>
