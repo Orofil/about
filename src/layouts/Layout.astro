@@ -52,6 +52,8 @@ const { title } = Astro.props;
 		--text-color: hsl(240, 53%, 91%);
 		--link-color: hsl(276, 31%, 53%);
 		--link-color-lighter: hsl(276, 36%, 80%);
+
+		--navbar-height: 4rem;
 	}
 
 	html {
@@ -74,7 +76,7 @@ const { title } = Astro.props;
 		flex-direction: column;
 		align-items: center;
 		gap: 2em;
-		min-height: calc(100vh - 4rem);
+		min-height: calc(100vh - var(--navbar-height));
 	}
 
 	/* TODO make better, also article + sections inside main */

@@ -1,8 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import MouseNavBar from "./MouseNavBar.jsx";
+
+import orofilText from "../assets/images/orofiltext.png";
 ---
 
 <MouseNavBar client:load>
+    <Image src={orofilText} priority alt="Orofil handwritten" height="60" />
     <ul class="nav-menu">
         <li><a href="/about">Home</a></li>
         <li><a href="/about/gallery">Gallery</a></li>
@@ -22,8 +26,9 @@ import MouseNavBar from "./MouseNavBar.jsx";
         justify-content: space-between;
         align-items: center;
 
-        height: 2rem;
-        padding: 1rem 3rem;
+        box-sizing: border-box;
+        height: var(--navbar-height);
+        padding-inline: 5rem;
 
         background: var(--background-color-2);
         border-bottom: 2px solid transparent;
@@ -64,10 +69,28 @@ import MouseNavBar from "./MouseNavBar.jsx";
 
     .nav-menu {
         display: flex;
-        justify-content: space-between;
+        justify-content: end;
+        gap: 1.5em;
+
         width: 100%;
         list-style-type: none;
         margin: 0;
-        padding: 0;
+        padding: 1rem 0;
+    }
+
+    img {
+        height: 95%;
+        width: auto;
+        filter: hue-rotate(-30deg);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.5em;
     }
 </style>
