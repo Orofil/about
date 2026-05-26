@@ -1,18 +1,57 @@
 ---
-import { Image } from 'astro:assets';
 import MouseNavBar from "./MouseNavBar.jsx";
-
-import orofilText from "../assets/images/orofiltext.png";
 ---
 
 <MouseNavBar client:load>
-    <Image src={orofilText} priority alt="Orofil handwritten" height="60" />
+    <svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" height="60" viewBox="0 0 421.88873 158.84419">
+        <g style="transform: translate(28.351344px,27.258415px);">
+            <g class="wave">
+                <path
+                d="m 28.028246,18.24384 c 0,0 9.447454,7.101775 14.472766,14.982372 6.070426,9.519524 5.707571,18.447682 5.707571,18.447682 0,0 -0.384883,11.065787 -6.930622,19.364969 -5.58035,7.075188 -13.849624,15.829532 -25.684064,15.79774 C 6.668428,86.812625 3.833456,81.817673 2.9557058,76.746434 1.929809,70.819272 3.2125578,63.277676 7.1344626,51.979656 11.026495,40.767692 16.811553,32.877904 23.136043,26.09175 29.407132,19.362895 41.07412,16.00158 41.07412,16.00158"
+                id="path2" />
+            </g>
+            <g class="wave">
+                <path
+                d="m 127.70688,86.734681 c 0,0 -1.07017,-1.732656 -3.05763,-3.261468 -1.4896,-1.145846 -15.58186,-11.518039 -22.3454,-15.390056 -5.17445,-2.962286 -19.600788,-9.563078 -29.621888,-12.044152 -11.853899,-2.934848 -36.050145,-3.6393 -36.050145,-3.6393 0,0 20.705308,-1.078912 34.916651,-5.87644 12.765821,-4.309542 22.209248,-9.545478 22.703628,-14.502617 0.464897,-4.661514 -3.950184,-9.292289 -8.332782,-11.73839 -4.3826,-2.446102 -11.549446,-4.453586 -16.583254,-2.943341 -5.028206,1.508564 -7.77584,5.011611 -8.243228,12.068884 -0.439652,6.638478 1.89428,22.775697 1.89428,22.775697 0,0 2.038419,7.236383 2.853786,12.026664 0.815366,4.790284 1.834575,10.192091 1.834575,10.192091"
+                id="path3" />
+            </g>
+            <g class="wave">
+                <path
+                d="m 159.89021,14.304959 c 0,0 1.19788,-3.148242 2.2011,-3.118391 1.58236,0.04709 4.294,6.998591 5.62552,13.253551 1.37859,6.476114 4.34554,26.239448 -5.63374,38.043665 -9.81928,11.614952 -19.00672,11.92318 -23.48212,11.678793 -9.65382,-0.527162 -13.27306,-5.192586 -14.42616,-9.15638 -1.1531,-3.963792 0.43827,-12.338369 6.83207,-23.671468 6.6587,-11.802633 12.64585,-17.794548 17.02275,-21.011283 5.89714,-4.334009 7.92759,-3.603449 7.92759,-3.603449"
+                id="path4" />
+            </g>
+            <g class="wave">
+                <path
+                d="m 181.79394,69.600595 c 0,0 2.52054,-0.228072 3.72797,-2.603136 1.30098,-2.559064 3.68821,-12.099822 4.77361,-19.004968 1.75698,-11.177692 2.54897,-28.258331 2.99342,-31.16439 0.46845,-3.062931 0.79426,-7.8893464 4.07189,-10.9544813 2.83978,-2.6556726 10.10807,-2.2363061 13.58501,-1.9818962 5.90965,0.4324138 34.83801,9.0662605 48.86786,9.2482145"
+                id="path5" />
+                <path
+                d="m 224.711,34.593098 c 0,0 -14.75561,3.847062 -23.29002,6.173201 -4.74947,1.294516 -10.28546,1.361011 -10.28546,1.361011"
+                id="path6" />
+            </g>
+            <g class="wave">
+                <path
+                d="m 245.01783,87.142364 c 0,0 -0.7961,-2.743002 -0.45865,-6.675819 0.31994,-3.728685 1.74642,-9.916018 4.1278,-15.746777 2.99724,-7.338682 6.70587,-15.092567 9.37673,-21.811072 2.04781,-5.151235 2.64994,-8.969038 2.64994,-8.969038"
+                id="path7" />
+            </g>
+            <g class="wave">
+                <path
+                d="m 298.11323,4.0358614 c 0,0 0.72762,9.3055626 0.29447,14.1975846 -0.48347,5.46038 -4.28818,20.147694 -7.13846,27.873507 -2.68369,7.274262 -10.73124,24.324419 -15.53343,33.529242 -4.26932,8.18343 -11.72216,18.330711 -11.35085,19.818964 0.47575,1.906881 4.03402,0.966351 5.94569,0.720691 2.00281,-0.257364 36.02449,-8.853957 48.57448,-12.179655 14.29839,-3.789015 43.67379,-11.74724 43.67379,-11.74724"
+                id="path8" />
+            </g>
+        </g>
+    </svg>
     <ul class="nav-menu">
         <li><a href="/about">Home</a></li>
         <li><a href="/about/gallery">Gallery</a></li>
         <li><a href="/about/music">Music</a></li>
     </ul>
 </MouseNavBar>
+
+<script>
+  Array.from(document.querySelectorAll('.logo .wave') as NodeListOf<HTMLElement>).forEach((path, i) => {
+    path.style.animationDelay = `${i * 0.16}s`;
+  });
+</script>
 
 <style>
 	:global(#navbar) {
@@ -30,7 +69,7 @@ import orofilText from "../assets/images/orofiltext.png";
         height: var(--navbar-height);
         padding-inline: 5rem;
 
-        background: var(--background-color-2);
+        background: var(--navbar-background-color);
         border-bottom: 2px solid transparent;
         transition: border-bottom 0.1s linear;
 
@@ -39,7 +78,8 @@ import orofilText from "../assets/images/orofiltext.png";
     }
 
     :global(#navbar:hover) {
-        border-bottom: 2px solid rgba(255, 150, 250, 0.05);
+        background: var(--navbar-hovered-background-color);
+        border-bottom: 2px solid var(--navbar-hovered-border-color);
     }
 
     :global(#navbar::after) {
@@ -50,7 +90,7 @@ import orofilText from "../assets/images/orofiltext.png";
         width: 100%;
         height: 2px;
 
-        background: var(--link-color);
+        background: var(--navbar-mouse-highlight-color);
         pointer-events: none;
 
         -webkit-mask-image: radial-gradient(
@@ -78,10 +118,35 @@ import orofilText from "../assets/images/orofiltext.png";
         padding: 1rem 0;
     }
 
-    img {
+    .logo {
         height: 95%;
         width: auto;
-        filter: hue-rotate(-30deg);
+        filter: drop-shadow(var(--logo-shadow-color) -0.10em 0.08em);
+    }
+
+    .logo path {
+        display: inline;
+        fill: none;
+        stroke: var(--logo-color);
+        stroke-width: 9;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: none;
+        stroke-opacity: 1;
+        paint-order: normal;
+    }
+
+    .logo .wave {
+        animation: wave 3s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+
+    @keyframes wave {
+        0%   { transform: translateY(0px); }
+        15%  { transform: translateY(-14%); }
+        30%  { transform: translateY(0px); }
+        100% { transform: translateY(0px); }
     }
 
     a {
