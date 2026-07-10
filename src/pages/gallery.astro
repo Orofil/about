@@ -1,5 +1,9 @@
 ---
+import GalleryGrid from '../components/GalleryGrid';
 import Layout from '../layouts/Layout.astro';
+import galleryData from '../data/gallery.json';
+
+const items = galleryData;
 ---
 
 <Layout title="Gallery : About Orofil">
@@ -8,9 +12,12 @@ import Layout from '../layouts/Layout.astro';
 		<p>
 			Here's a showcase of some of my photos.
 		</p>
+		<p>
+			Find more on my <a target="_blank" href="https://www.tumblr.com/orofil">Tumblr blog</a>.
+		</p>
 	</section>
 	<section>
-		Photos coming soon...
+		<GalleryGrid items={items} client:load />
 	</section>
 </Layout>
 
@@ -18,5 +25,16 @@ import Layout from '../layouts/Layout.astro';
 	#gallery-start {
 		max-width: 500px;
 		margin: 0 auto;
+	}
+
+	section {
+		width: 100%;
+	}
+
+	section > :global(.GalleryGrid) {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 </style>
