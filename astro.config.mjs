@@ -5,5 +5,8 @@ import preact from "@astrojs/preact";
 export default defineConfig({
   site: "https://orofil.github.io",
   base: "/about",
-  integrations: [preact()]
+  integrations: [preact()],
+  devToolbar: {
+    enabled: false
+  }
 });

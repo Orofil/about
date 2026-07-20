@@ -4,6 +4,19 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="About Orofil">
 	<div>
+		<div id="links-container">
+			<p>Find me on…</p>
+			<div id="links-list">
+				<ul>
+					<li><a target="_blank" href="https://github.com/Orofil">GitHub</a></li>
+					<li><a target="_blank" href="https://bandcamp.com/orofil">Bandcamp</a></li>
+					<li><a target="_blank" href="https://www.last.fm/user/Orofil">last.fm</a></li>
+                    <li><a target="_blank" href="https://www.tumblr.com/orofil">Tumblr</a></li>
+					<li><a target="_blank" href="https://bsky.app/profile/orofil.bsky.social">Bluesky</a></li>
+				</ul>
+			</div>
+		</div>
+        
 		<h1>Orofil</h1>
 		<p>Hello! Welcome to my page about things such as...</p>
 		<ul id="introduction-things">
@@ -15,19 +28,6 @@ import Layout from '../layouts/Layout.astro';
 		</ul>
 
 		<p>This website is still a <strong>work in progress</strong>!</p>
-
-		<div id="links-container">
-			<p>Find me on…</p>
-			<div id="links-list">
-				<ul style="list-style-type: none;">
-					<li><a target="_blank" href="https://github.com/Orofil">GitHub</a></li>
-					<li><a target="_blank" href="https://bandcamp.com/orofil">Bandcamp</a></li>
-					<li><a target="_blank" href="https://www.last.fm/user/Orofil">last.fm</a></li>
-                    <li><a target="_blank" href="https://www.tumblr.com/orofil">Tumblr</a></li>
-					<li><a target="_blank" href="https://bsky.app/profile/orofil.bsky.social">Bluesky</a></li>
-				</ul>
-			</div>
-		</div>
 	</div>
 </Layout>
 
@@ -46,12 +46,6 @@ import Layout from '../layouts/Layout.astro';
 		text-decoration-line: underline;
 	}
 
-	li {
-		padding-top: 2px;
-		padding-bottom: 2px;
-		margin-left: -30px;
-	}
-
 	#introduction-things {
 		list-style-type: none;
 		list-style-position: outside;
@@ -59,6 +53,12 @@ import Layout from '../layouts/Layout.astro';
 
 	#introduction-things > li {
 		position: relative;
+		width: fit-content;
+		max-width: calc(100% - 3.5em); /* TODO make this implementation cleaner */
+		min-width: 0;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		margin-left: -30px;
 	}
 
 	#introduction-things > li::before {
@@ -88,19 +88,76 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	#links-container {
-		position: absolute;
-		top: 5em;
-		right: 5em;
-		width: 16em;
+		width: 100%;
+		margin-top: 2.5rem;
 	}
 
 	#links-container > p {
-		margin-bottom: -0.5em;
+		margin-bottom: 0.5em;
 		font-style: italic;
 		color: var(--link-color-lighter);
 	}
 
 	#links-list {
-		border-left: 0.2em solid var(--link-color);
+		border-block: 0.18em solid var(--link-color);
+		padding-left: 0;
+		padding-top: 0.75em;
+		padding-bottom: 0.75em;
+	}
+
+	#links-list ul {
+		list-style-type: none;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.65em 1rem;
+		margin: 0;
+		padding-left: 0;
+	}
+
+	#links-list li {
+		padding: 0;
+		margin: 0;
+	}
+
+	#links-list a {
+		display: inline-block;
+		padding: 0.15em 0;
+	}
+
+	@media screen and (min-width: 40rem) {
+		#links-container {
+			margin-top: unset;
+			
+			position: absolute;
+			top: 5em;
+			right: 5em;
+			/* width: 16em; */
+            width: fit-content; /* TODO maybe clamp or something so it's wider when the screen is wider */
+		}
+
+		#links-list {
+			border-block: unset;
+			padding-left: 0.75em;
+			padding-top: unset;
+			padding-bottom: 0.5em;
+
+			border-left: 0.2em solid var(--link-color);
+		}
+
+		#links-list ul {
+			display: unset;
+			margin: unset;
+			padding-left: unset;
+		}
+
+		#links-list li {
+			padding-top: 2px;
+			padding-bottom: 2px;
+		}
+
+		#links-list a {
+			display: unset;
+			padding: unset;
+		}
 	}
 </style>

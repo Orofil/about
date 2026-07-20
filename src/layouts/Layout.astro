@@ -86,15 +86,30 @@ const { title } = Astro.props;
 		align-items: center;
 		gap: 2em;
 		min-height: calc(100vh - var(--navbar-height));
+		padding-inline: clamp(1rem, 3vw, 2rem);
+		box-sizing: border-box;
 	}
 
 	/* TODO make better, also article + sections inside main */
 	:global(main > div) {
 		max-width: 700px;
 		margin: 0 auto;
+		width: min(100%, 700px);
 	}
 
 	:global(a) {
 		color: var(--link-color);
 	}
+
+    /* TODO invert filter criteria */
+	/* @media (max-width: 40rem) {
+		main {
+			gap: 1.25em;
+			padding-inline: 1rem;
+		}
+
+		:global(main > div) {
+			width: 100%;
+		}
+	} */
 </style>
